@@ -7,6 +7,7 @@ import Emp from '../../assets/Emp.jpg'
 const EditEmployee = () => {
     const location = useLocation();
     const { employee } = location.state;
+    
     const [forminput, setFormInput] = useState(employee);
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -18,7 +19,10 @@ const EditEmployee = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
         dispatch(updateEmployee(forminput));
+
+        
         navigate('/view-data');
     };
 

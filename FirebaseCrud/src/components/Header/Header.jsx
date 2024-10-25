@@ -12,13 +12,17 @@ const Header = () => {
         <ul className="flex space-x-4 mx-auto">
           <li>
             <Link to="/" className="hover:underline">Home</Link>
-     
+
           </li>
 
           <li>
             <Link to="/view-data" className="hover:underline">View Data</Link>
-          
+
           </li>
+
+          <Link to="/" className="bg-red-500 text-white py-2 px-4 rounded">
+            Register
+          </Link>
         </ul>
       </nav>
     </header>

@@ -13,6 +13,7 @@ const ViewData = () => {
     }, [dispatch]);
 
     const handleEdit = (employee) => {
+        
         navigate('/edit-employee', { state: { employee } });
     };
 

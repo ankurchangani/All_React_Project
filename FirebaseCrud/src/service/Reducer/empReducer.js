@@ -1,6 +1,5 @@
 const initialState = {
     employees: [],
-
     loading: false,
 };
 
