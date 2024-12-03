@@ -1,33 +1,45 @@
-import React, { useState } from 'react';
+
+
+
+import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { updateRecipes } from '../../service/Action/recipeAction'; 
+import { updateRecipes } from '../../service/Action/recipeAction';
 
 const Updatedata = () => {
   const location = useLocation();
-  const { recipes } = location.state;
-  
+  const { recipes } = location.state || {};  // Ensure recipes is received correctly
+
+  // Handling case where recipes might not be passed
+  if (!recipes) {
+    return <div>Recipe data is not available.</div>;  // Display message if not available
+  }
+
+  // Initializing state for the form
   const [formupdate, setFormupdate] = useState({
-    title: recipes.title,
-    ingredients: recipes.ingredients,
-    instructions: recipes.instructions,
+    title: recipes.title || '',
+    ingredients: recipes.ingredients || '',
+    instructions: recipes.instructions || '',
+    image: recipes.image || '',
   });
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  // Handle input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormupdate({ ...formupdate, [name]: value });
   };
 
+  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
 
     dispatch(updateRecipes(recipes.id, formupdate))
       .then(() => {
         console.log("Recipe updated successfully!");
-        navigate('/viewrecipe'); 
+        navigate('/viewrecipe');  // Redirect to the recipe view page after update
       })
       .catch((error) => {
         console.error("Error updating recipe: ", error);
@@ -75,6 +87,24 @@ const Updatedata = () => {
             required
           />
         </div>
+
+        <div className="mb-4">
+          <label className="block text-gray-700 text-sm font-semibold mb-2" htmlFor="image">
+            Image URL
+          </label>
+          <input
+            className="border border-gray-300 p-2 w-full rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            type="text"
+            name="image"
+            id="image"
+            placeholder="Enter image URL"
+            value={formupdate.image}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+   
         <button
           className="bg-blue-600 text-white p-2 rounded hover:bg-blue-500 transition duration-200 w-full"
           type="submit"

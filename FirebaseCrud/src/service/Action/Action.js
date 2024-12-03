@@ -14,7 +14,7 @@ export const addEmployee = (employee) => async (dispatch) => {
         console.error("Error adding employee: ", error);
     }
 };
-
+    
 export const updateEmployee = (employee) => async (dispatch) => {
     try {
         await setDoc(doc(db, "employees", employee.id.toString()), { ...employee });

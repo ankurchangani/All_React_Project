@@ -32,7 +32,8 @@ const RegisterForm = () => {
     }
 
     dispatch(registerAction(formData));
-    navigate('/login-Form'); // Navigate only after successful registration
+
+    navigate('/login-Form'); 
 };
 
 

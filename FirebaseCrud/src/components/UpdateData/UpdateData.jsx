@@ -9,6 +9,7 @@ const EditEmployee = () => {
     const { employee } = location.state;
     
     const [forminput, setFormInput] = useState(employee);
+    
     const dispatch = useDispatch();
     const navigate = useNavigate();
 

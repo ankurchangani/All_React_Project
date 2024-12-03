@@ -6,6 +6,23 @@ const initialState = {
 };
 const recipeReducer = (state = initialState, action) => {
   switch (action.type) {
+    case 'CREATE_RECIPE':
+      return {
+          ...state
+          , recipes: [...state.recipes, action.recipe]
+      }
+      
+      case 'UPDATE_RECIPE':
+        return {
+            ...state ,
+            recipes : action.payload
+        };
+
+      case 'DELETE_RECIPE':
+          return {
+              ...state
+          };
+
       case 'FETCH_RECIPES_REQUEST':
           return {
               ...state,
@@ -15,9 +32,10 @@ const recipeReducer = (state = initialState, action) => {
           return {
               ...state,
               loading: false,
+              
               recipes: action.payload.map(recipe => ({
                   ...recipe,
-                  ingredients: recipe.ingredients || [], // Ensure ingredients is always an array
+                  ingredients: recipe.ingredients || [], 
               })),
           };
       case 'FETCH_RECIPES_FAILURE':

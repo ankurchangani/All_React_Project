@@ -14,15 +14,26 @@ const LoginForm = () => {
         setFormData({ ...formData, [name]: value });
     };
 
+
     const handleSubmit = (e) => {
         e.preventDefault();
+
         dispatch(loginAction(formData.email, formData.password));
-        navigate('/ ');
+
+        navigate('/');
+
+        setFormData({
+            email :'' ,
+            password: ''   ,
+
+        })
     };
 
     return (
         <>
+
             <div className="absolute top-0 left-0  w-full h-screen bg-black overflow-x-auto">
+                
                 <div className="flex items-center justify-center min-h-screen bg-gray-100">
                     <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-96">
                         <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">Login</h2>
