@@ -47,15 +47,14 @@ const Header = () => {
               </Link>
             </li>
             <li className="transform transition-all duration-300 hover:scale-110 hover:translate-y-1">
-              {/* <a href="#projects" className="hover:text-gray-300">Projects</a> */}
+             
 
               <Link to="/projects" className="hover:text-gray-300" >
                 Projects
               </Link>
             </li>
             <li className="transform transition-all duration-300 hover:scale-110 hover:translate-y-1">
-              {/* <a href="#contacts" className="hover:text-gray-300">Contacts</a> */}
-
+              
               <Link to="/contacts" className="hover:text-gray-300" >
                 Contacts
               </Link>

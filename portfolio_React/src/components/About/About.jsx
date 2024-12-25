@@ -105,6 +105,7 @@ const About = () => {
                     } transition-all duration-1000 ease-out mt-12`}
                 >
                     <h3 className="text-2xl font-semibold mb-4">Education</h3>
+                    
                     <ul className="space-y-4 text-lg sm:text-xl text-gray-300">
                         <li>
                             <strong>Institution:</strong> Red & White Multimedia Education Official (2023 - 2024)
