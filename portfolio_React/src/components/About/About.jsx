@@ -1,122 +1,92 @@
-import React, { useEffect, useState } from 'react';
-import AboutImg from '../../assets/images/About/About.jpg'; // Ensure this path is correct
-
+import React, { useState } from 'react';
+import AboutImg from '../../assets/images/About/About.jpg';
 
 const About = () => {
-    const [fadeIn, setFadeIn] = useState(false);
+    const [modalOpen, setModalOpen] = useState(false);
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setFadeIn(true);
-        }, 500);
-        return () => clearTimeout(timer);
-    }, []);
+    const handleModalOpen = () => setModalOpen(true);
+
+    const handleModalClose = () => setModalOpen(false);
 
     return (
-        <section className=" py-16 px-4 text-white">
-            <div className="container mx-auto max-w-7xl relative z-10">
-                {/* Title Section */}
-                <div className="text-center mb-8">
-                    <h2 className="title text-blue-400">About Me</h2>
-                </div>
+        <>
+            <section className="py-20   text-white">
+                <div className="container mx-auto">
+                    <div className="flex justify-center items-center">
+                        <h2 className="titel">
+                            ABOUT ME
+                            <span className="titel-shadow">ABOUT ME</span>
+                        </h2>
+                    </div>
 
-                {/* Header Section */}
-                <div
-                    className={`text-center mb-12 ${
-                        fadeIn ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                    } transition-all duration-1000 ease-out`}
-                >
-                    <h1 className="text-4xl sm:text-5xl font-bold mb-4">
-                        Hi There! I'm{' '}
-                        <span className="text-blue-400">Ankur Changani</span>
-                    </h1>
-                    <h2 className="text-lg sm:text-xl mb-4">Front-End Developer</h2>
-                    <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto">
-                        I create content that guides beginners through building or mastering technologies like HTML,
-                        CSS, JavaScript, and popular frameworks like React.
-                    </p>
-                </div>
 
-                {/* Image Section */}
-                <div className="mb-12 flex justify-center">
-                    <img
-                        src={AboutImg}
-                        alt="About"
-                        className={`w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 object-cover rounded-full shadow-lg transition-all duration-1000 ease-out ${
-                            fadeIn ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                        }`}
-                    />
-                </div>
+                    <div className="flex flex-col lg:flex-row items-center">
+                        {/* Image Section */}
+                        <div className="w-full lg:w-1/2 flex justify-center lg:justify-start mb-10 lg:mb-0">
+                            <img
+                                src={AboutImg}
+                                alt="About"
+                                className="w-80 h-80 lg:w-96 lg:h-96 border-8 border-gray-700 shadow-lg object-cover rounded-full"
+                            />
+                        </div>
 
-                {/* Personal Information Section */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
-                    <div className="space-y-4">
-                        <h3 className="text-2xl font-semibold">Contact Information</h3>
-                        <ul className="space-y-2 text-gray-300">
-                            <li>
-                                <strong>Birthday:</strong> Nov 22, 2007
+                        {/* Text Section */}
+                        <div className="w-full lg:w-1/2 text-center lg:text-left px-4">
+                            <h1 className="text-5xl font-bold mb-6 text-blue-400">About Me</h1>
+                            <p className="mb-6 text-xl text-gray-300">
+                                I am <span className="font-semibold text-white text-2xl">Ankur Changani</span>, a dedicated Front-End Developer skilled in modern front-end technologies and web development. I create responsive and user-friendly designs and have a strong technical foundation, problem-solving skills, and a passion for continuous learning.
+                            </p>
+                            <button
+                                onClick={handleModalOpen}
+                                className="px-8 py-4 text-lg bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold rounded-full transition duration-300 hover:from-blue-600 hover:to-purple-600"
+                            >
+                                Learn More
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {modalOpen && (
+                <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50 px-4">
+                    {/* Modal Content */}
+                    <div className="bg-gray-900 text-white rounded-lg p-10 w-full md:w-3/4 lg:w-1/2 shadow-xl border-4 border-blue-500 flex flex-col gap-6 relative">
+                        {/* Close Button */}
+                        <button
+                            onClick={handleModalClose}
+                            className="absolute top-4 right-4 text-gray-300 hover:text-gray-100 text-4xl"
+                        >
+                            &times;
+                        </button>
+
+                        {/* Title */}
+                        <div className="text-4xl font-bold text-blue-400 text-center">More About Me</div>
+
+                        {/* Description */}
+                        <div className="text-xl text-gray-300 text-center">
+                            I am passionate about front-end development, focusing on building efficient and beautiful web applications. I love working on dynamic projects and learning new technologies to enhance my skills.
+                        </div>
+
+                        {/* Education Section */}
+                        <div className="text-4xl font-bold text-blue-400 text-center">My Education</div>
+                        <ul className="text-2xl text-gray-300 space-y-4 list-none">
+                            <li className="border-b-2 border-gray-700 pb-3 font-semibold">
+                                Diploma: Computer Engineering at Swarrnim Startup and Innovations University
                             </li>
-                            <li>
-                                <strong>Phone:</strong> +9499606395
+                            <li className="border-b-2 border-gray-700 pb-3 font-semibold">
+                                Course: Front-End Developer at Red & White Multimedia Education
                             </li>
-                            <li>
-                                <strong>Email:</strong> changaniankur100@gmail.com
+                            <li className="border-b-2 border-gray-700 pb-3 font-semibold">
+                                10th SSC: Passed
                             </li>
-                            <li>
-                                <strong>From:</strong> Surat, Gujarat, India
-                            </li>
-                            <li>
-                                <strong>Languages:</strong> Gujarati, Hindi, English
+                            <li className="border-b-2 border-gray-700 pb-3 font-semibold">
+                                School: Ramdev Vidyabhavan
                             </li>
                         </ul>
                     </div>
-
-                    <div className="space-y-4">
-                        <h3 className="text-2xl font-semibold">Download CV</h3>
-                        <a
-                            href="path_to_cv.pdf"
-                            download
-                            className="inline-block bg-blue-500 hover:bg-blue-600 text-white py-2 px-6 rounded-lg text-lg"
-                        >
-                            Download CV
-                        </a>
-                    </div>
                 </div>
-
-                {/* Background Section */}
-                <div
-                    className={`text-center ${
-                        fadeIn ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                    } transition-all duration-1000 ease-out`}
-                >
-                    <h3 className="text-2xl font-semibold mb-4">Background Information</h3>
-                    <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
-                        I am a passionate Front-End Developer with expertise in HTML5, CSS3, Media Query, jQuery,
-                        Bootstrap, Tailwind CSS, C-Language, JavaScript, React, and JSX. With a strong educational
-                        background in Full Stack Web Development and Computer Programming, I am constantly learning new
-                        technologies to stay on top of industry trends.
-                    </p>
-                </div>
-
-                {/* Education Section */}
-                <div
-                    className={`text-center ${
-                        fadeIn ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                    } transition-all duration-1000 ease-out mt-12`}
-                >
-                    <h3 className="text-2xl font-semibold mb-4">Education</h3>
-                    
-                    <ul className="space-y-4 text-lg sm:text-xl text-gray-300">
-                        <li>
-                            <strong>Institution:</strong> Red & White Multimedia Education Official (2023 - 2024)
-                        </li>
-                        <li>
-                            <strong>College:</strong> Swarrnim Startup & Innovation University, Gujarat
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+            )}
+        </>
     );
 };
 

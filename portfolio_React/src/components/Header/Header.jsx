@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import Logo from '../../assets/images/logo/Logo.png'
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -9,65 +9,49 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-gradient-to-r from-gray-700 to-gray-900 shadow-lg dark:bg-gray-800">
-      <div className="container mx-auto px-6 py-4">
+    <header className="bg-gradient-to-r from-purple-700 to-indigo-900 shadow-lg dark:bg-gray-800">
+      <div className="container mx-auto px-2">
         <nav className="flex justify-between items-center">
           {/* Logo */}
           <div
-            className="text-white text-3xl font-bold transform transition-all duration-500 hover:scale-110 hover:translate-y-2"
             style={{
-              background: "linear-gradient(90deg, #ff7eb3, #ff758c, #ff655b, #f94e44)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               animation: "gradientAnimation 3s ease infinite",
             }}
           >
-            Ankur Changani
+           <img src = {Logo} alt="logo" className="w-20 h-20" />
           </div>
+
           {/* Desktop Menu */}
           <ul className="hidden md:flex justify-center space-x-6 text-white font-semibold dark:text-white flex-grow">
-            <li className="transform transition-all duration-300 hover:scale-110 hover:translate-y-1">
-
-
-              <Link to="/" className="hover:text-gray-300" >
-                Home
-              </Link>
-            </li>
-            <li className="transform transition-all duration-300 hover:scale-110 hover:translate-y-1">
-
-              <Link to="/about" className="hover:text-gray-300" >
-                About
-              </Link>
-            </li>
-
-            <li className="transform transition-all duration-300 hover:scale-110 hover:translate-y-1">
-
-              <Link to="/skills" className="hover:text-gray-300" >
-                Skills
-              </Link>
-            </li>
-            <li className="transform transition-all duration-300 hover:scale-110 hover:translate-y-1">
-             
-
-              <Link to="/projects" className="hover:text-gray-300" >
-                Projects
-              </Link>
-            </li>
-            <li className="transform transition-all duration-300 hover:scale-110 hover:translate-y-1">
-              
-              <Link to="/contacts" className="hover:text-gray-300" >
-                Contacts
-              </Link>
-            </li>
+            {["Home", "About", "Skills", "Projects", "Contacts"].map(
+              (item, index) => (
+                <li
+                  key={index}
+                  className="relative transform transition-all duration-300 px-6 py-3 rounded-full hover:bg-white hover:text-gray-800 hover:shadow-xl hover:scale-110 hover:opacity-90"
+                  style={{
+                    borderRadius: "50px",
+                    transition: "all 0.3s ease",
+                  }}
+                >
+                  <a className="block">{item}</a>
+                </li>
+              )
+            )}
           </ul>
 
-          {/* Let's Talk Button (Desktop) */}
+          {/* Hire Me Button (3D Effect with Hover Scale) */}
           <div className="hidden md:block ml-auto">
             <a
-              href="#lets-talk"
-              className="bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700 hover:text-gray-100 transition duration-300"
+              href="#hire-me"
+              className="relative px-6 py-3 text-white font-semibold bg-gradient-to-r from-pink-500 to-red-500 rounded-full shadow-lg transition duration-300 transform hover:scale-110 active:scale-95"
+              style={{
+                borderRadius: "50px",
+                boxShadow: "0px 6px 15px rgba(0, 0, 0, 0.3)",
+              }}
             >
-              Let's Talk
+              Hire Me
             </a>
           </div>
 
@@ -84,37 +68,23 @@ const Header = () => {
         {isMobileMenuOpen && (
           <div className="md:hidden">
             <ul className="flex flex-col space-y-4 text-white font-semibold mt-4 dark:text-white">
-              <li>
-
-                <Link to="/" className="block text-center hover:text-gray-300">
-                  Home
-                </Link>
-              </li>
-              <li>
-
-                <Link to="/about" className="block text-center hover:text-gray-300">
-                  About
-                </Link>
-              </li>
-              <li>
-
-
-                <Link to="/projects" className="block text-center hover:text-gray-300">
-                  Projects
-                </Link>
-              </li>
-              <li>
-
-                <Link to="/contacts" className="block text-center hover:text-gray-300">
-                  Contacts
-                </Link>
-              </li>
+              {["Home", "About", "Projects", "Contacts"].map((item, index) => (
+                <li key={index}>
+                  <a className="block text-center px-6 py-3 rounded-full hover:bg-white hover:text-gray-800 hover:shadow-xl hover:scale-110 hover:opacity-90 transition duration-300">
+                    {item}
+                  </a>
+                </li>
+              ))}
               <li>
                 <a
-                  href="#lets-talk"
-                  className="block bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700 hover:text-gray-100 transition duration-300 text-center"
+                  href="#hire-me"
+                  className="block text-center px-6 py-3 bg-gradient-to-r from-pink-500 to-red-500 rounded-full text-white shadow-lg transition duration-300 transform hover:scale-110 active:scale-95"
+                  style={{
+                    borderRadius: "50px",
+                    boxShadow: "0px 6px 15px rgba(0, 0, 0, 0.3)",
+                  }}
                 >
-                  Let's Talk
+                  Hire Me
                 </a>
               </li>
             </ul>
@@ -122,7 +92,6 @@ const Header = () => {
         )}
       </div>
     </header>
-
   );
 };
 

@@ -1,71 +1,98 @@
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/effect-cube';  // Import effect-cube CSS
-import 'swiper/css/pagination';
-import 'swiper/css/autoplay';
-import { EffectCube, Pagination, Autoplay } from 'swiper/modules';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
-const skills = [
-  { id: 1, name: 'HTML5', img: 'https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg' },
-  { id: 2, name: 'CSS3', img: 'https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg' },
-  { id: 3, name: 'Bootstrap', img: 'https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo.svg' },
-  { id: 4, name: 'jQuery', img: 'https://cdn.worldvectorlogo.com/logos/jquery-4.svg' },
-  { id: 5, name: 'JavaScript', img: 'https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png' },
-  { id: 6, name: 'C Language', img: 'https://upload.wikimedia.org/wikipedia/commons/1/18/C_Programming_Language.svg' },
-  { id: 7, name: 'React.js', img: 'https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg' },
-];
+// Import skill images
+import Html5 from "../../assets/images/Sklis/html5.png";
+import Css from "../../assets/images/Sklis/css3.png";
+import Bootstrap from "../../assets/images/Sklis/bootstrap.png";
+import jQuery from "../../assets/images/Sklis/jquery.png";
+import TailwindCss from "../../assets/images/Sklis/Tailwind_CSS_Logo.webp";
+import Clanguage from "../../assets/images/Sklis/c-language.png";
+import Javascript from "../../assets/images/Sklis/javascript.png";
+import ReactImg from "../../assets/images/Sklis/React.js_logo-512.png";
+import github from "../../assets/images/Sklis/github.png";
 
-const Skills = () => {
+const SkillsSwiper = () => {
+  const skills = [
+    { img: Html5, name: "HTML5" },
+    { img: Css, name: "CSS3" },
+    { img: Bootstrap, name: "Bootstrap" },
+    { img: jQuery, name: "jQuery" },
+    { img: TailwindCss, name: "Tailwind CSS" },
+    { img: Clanguage, name: "C Language" },
+    { img: Javascript, name: "JavaScript" },
+    { img: ReactImg, name: "React.js" },
+    { img: github, name: "GitHub" },
+  ];
+
   return (
-    <section className="py-16 ">
-      <div className="container mx-auto px-4 text-center">
-        {/* Section Header */}
-        <h2 className="title text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-          Skills
-        </h2>
-        <p className="text-sm md:text-base lg:text-lg text-gray-400 mb-8">
-          Technologies and tools I am proficient in
-        </p>
+    <section className="py-20 px-4">
+      <div className="container mx-auto">
+        <div className="flex justify-center items-center mb-10">
+          <h2 className="titel">
+            Skills
+            <span className="titel-shadow">
+              Skills
+            </span>
+          </h2>
+        </div>
 
-        {/* Swiper Component */}
         <Swiper
-          effect="cube"  // Set effect to cube
-          grabCursor={true}
-          centeredSlides={true}
-          slidesPerView="auto"
-          autoplay={{ delay: 3000, disableOnInteraction: false }}
-          cubeEffect={{
-            shadow: true,
-            slideShadows: true,
-            shadowOffset: 20,
-            shadowScale: 0.94,
+          modules={[Navigation, Autoplay, Pagination]}
+          loop={true}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
           }}
+          navigation={true}
           pagination={{ clickable: true }}
-          modules={[EffectCube, Pagination, Autoplay]}
-          className="w-full sm:w-4/5 lg:w-2/3"
+          breakpoints={{
+            320: { slidesPerView: 1, spaceBetween: 20 },
+            480: { slidesPerView: 2, spaceBetween: 20 },
+            768: { slidesPerView: 3, spaceBetween: 25 },
+            1024: { slidesPerView: 4, spaceBetween: 30 },
+          }}
+          className="flex justify-center text-center"
         >
-          {skills.map((skill) => (
-            <SwiperSlide
-              key={skill.id}
-              className="bg-gray-800 rounded-lg shadow-lg p-4 sm:p-6 md:p-8 transition-transform duration-300 hover:scale-105"
-            >
-              {/* Skill Image */}
-              <img
-                src={skill.img}
-                alt={skill.name}
-                className="mx-auto w-24 h-24 sm:w-28 sm:h-28 md:w-36 md:h-36 mb-4 object-contain"
-              />
-              {/* Skill Name */}
-              <h3 className="text-sm sm:text-base md:text-lg font-semibold text-white">
-                {skill.name}
-              </h3>
+          {skills.map((skill, index) => (
+            <SwiperSlide key={index}>
+              <div className="flex flex-col items-center justify-center p-6 bg-white bg-opacity-20 backdrop-blur-md rounded-2xl shadow-lg border border-white transition-all duration-300 hover:scale-105">
+                <img
+                  src={skill.img}
+                  alt={skill.name}
+                  className="w-20 h-20 md:w-24 md:h-24 object-contain"
+                />
+                <p className="text-white text-lg md:text-xl font-semibold mt-4">
+                  {skill.name}
+                </p>
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>
       </div>
+
+      {/* Custom Styling for Pagination Dots */}
+      <style>
+        {`
+          .swiper-pagination-bullet {
+            width: 12px;
+            height: 12px;
+            background: linear-gradient(90deg, #ff7e5f, #feb47b);
+            opacity: 0.7;
+          }
+          .swiper-pagination-bullet-active {
+            width: 14px;
+            height: 14px;
+            opacity: 1;
+            transform: scale(1.2);
+          }
+        `}
+      </style>
     </section>
   );
 };
 
-export default Skills;
+export default SkillsSwiper;

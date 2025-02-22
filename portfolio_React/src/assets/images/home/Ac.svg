@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<svg width="93" height="89" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <defs>
+  <filter color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" height="37.32" id="filter0_i" width="7.96" x="43.1476" y="27.0838">
+   <feGaussianBlur stdDeviation="2"/>
+  </filter>
+ </defs>
+ <g class="layer">
+  <title>Layer 1</title>
+  <path d="m66.8111,12.2471l19.0365,38.3633c2.8232,5.6894 0.396,12.368 -5.4213,14.9171l-38.5925,16.9112c-5.8173,2.5491 -12.8217,0.0035 -15.6448,-5.6858l-19.03659,-38.3633c-2.82315,-5.6893 -0.39594,-12.3679 5.42129,-14.9171l38.5925,-16.91119c5.8173,-2.54913 12.8217,-0.00349 15.6449,5.68579z" fill="black" id="svg_1" stroke="#78D5A9" stroke-width="3"/>
+  <rect fill="#241C3C" height="61.7372" id="svg_2" rx="13" transform="matrix(0.716676 0.697406 -0.740533 0.67202 47.2654 1.50847)" width="63.0788"/>
+  <g filter="url(#filter0_i)" id="svg_3"/>
+  <text fill="#000000" font-family="serif" font-size="24" id="svg_6" stroke="#78D5A9" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="0" text-anchor="middle" x="37.99999" xml:space="preserve" y="41.799998"/>
+  <text fill="#78d5a9" font-family="Fantasy" font-size="35" id="svg_20" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" text-anchor="middle" x="46.602543" xml:space="preserve" y="50.90625">A</text>
+ </g>
+</svg>
