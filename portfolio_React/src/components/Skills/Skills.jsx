@@ -1,7 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay, Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 // Import skill images
@@ -29,25 +28,22 @@ const SkillsSwiper = () => {
   ];
 
   return (
-    <section className="py-20 px-4">
+    <section className="py-20 ">
       <div className="container mx-auto">
         <div className="flex justify-center items-center mb-10">
-          <h2 className="titel">
+          <h2 className="titel text-[#635985]">
             Skills
-            <span className="titel-shadow">
-              Skills
-            </span>
+            <span className="titel-shadow text-[#443C68]">Skills</span>
           </h2>
         </div>
 
         <Swiper
-          modules={[Navigation, Autoplay, Pagination]}
+          modules={[Autoplay, Pagination]}
           loop={true}
           autoplay={{
             delay: 2500,
             disableOnInteraction: false,
           }}
-          navigation={true}
           pagination={{ clickable: true }}
           breakpoints={{
             320: { slidesPerView: 1, spaceBetween: 20 },
@@ -59,7 +55,7 @@ const SkillsSwiper = () => {
         >
           {skills.map((skill, index) => (
             <SwiperSlide key={index}>
-              <div className="flex flex-col items-center justify-center p-6 bg-white bg-opacity-20 backdrop-blur-md rounded-2xl shadow-lg border border-white transition-all duration-300 hover:scale-105">
+              <div className="flex flex-col items-center justify-center p-6 bg-[#393053] bg-opacity-90 backdrop-blur-md rounded-2xl shadow-lg border border-[#35374B] transition-all duration-300 hover:scale-105">
                 <img
                   src={skill.img}
                   alt={skill.name}
@@ -80,7 +76,7 @@ const SkillsSwiper = () => {
           .swiper-pagination-bullet {
             width: 12px;
             height: 12px;
-            background: linear-gradient(90deg, #ff7e5f, #feb47b);
+            background: linear-gradient(90deg, #635985, #443C68);
             opacity: 0.7;
           }
           .swiper-pagination-bullet-active {

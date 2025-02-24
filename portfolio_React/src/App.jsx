@@ -46,7 +46,7 @@ function App() {
           {/* Back to Top Button with FontAwesome Icon */}
           {showScrollButton && (
             <button
-              className="fixed bottom-5 right-5 bg-gradient-to-r from-blue-500 to-purple-600 text-white p-3 rounded-full shadow-lg hover:opacity-80 transition-all duration-300 flex items-center justify-center"
+              className="fixed bottom-5 right-5 bg-gradient-to-r from-[#635985] to-[#443C68] text-white p-3 rounded-full shadow-lg hover:from-[#393053] hover:to-[#18122B] transition-all duration-300 flex items-center justify-center"
               onClick={scrollToTop}
             >
               <FaArrowUp size={24} />

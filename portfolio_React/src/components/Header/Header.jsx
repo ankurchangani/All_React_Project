@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Logo from '../../assets/images/logo/Logo.png'
+import Logo from "../../assets/images/home/Ac.svg";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -9,80 +9,66 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-gradient-to-r from-purple-700 to-indigo-900 shadow-lg dark:bg-gray-800">
-      <div className="container mx-auto px-2">
+    <header className="bg-gradient-to-r from-[#635985] via-[#443C68] to-[#393053] w-full px-3  rounded-lg shadow-lg">
+      <div className="container mx-auto">
         <nav className="flex justify-between items-center">
           {/* Logo */}
-          <div
-            style={{
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              animation: "gradientAnimation 3s ease infinite",
-            }}
-          >
-           <img src = {Logo} alt="logo" className="w-20 h-20" />
+          <div>
+            <img src={Logo} alt="logo" className="w-20 h-20" />
           </div>
 
-          {/* Desktop Menu */}
-          <ul className="hidden md:flex justify-center space-x-6 text-white font-semibold dark:text-white flex-grow">
-            {["Home", "About", "Skills", "Projects", "Contacts"].map(
-              (item, index) => (
-                <li
-                  key={index}
-                  className="relative transform transition-all duration-300 px-6 py-3 rounded-full hover:bg-white hover:text-gray-800 hover:shadow-xl hover:scale-110 hover:opacity-90"
-                  style={{
-                    borderRadius: "50px",
-                    transition: "all 0.3s ease",
-                  }}
+          
+          <ul className="hidden md:flex flex-grow justify-center items-center space-x-6 text-white font-semibold">
+            {["Home", "About", "Skills", "Projects", "Contacts"].map((item, index) => (
+              <li key={index} className="relative group">
+                <a
+                  className="block px-6 py-3 text-center rounded-lg transition-all duration-300
+                  bg-transparent hover:bg-white hover:text-[#393053] hover:shadow-md"
                 >
-                  <a className="block">{item}</a>
-                </li>
-              )
-            )}
+                  {item}
+                </a>
+                {/* Underline Animation */}
+                <span className="absolute left-1/2 -bottom-2 w-0 h-[3px] bg-white transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+              </li>
+            ))}
           </ul>
 
-          {/* Hire Me Button (3D Effect with Hover Scale) */}
-          <div className="hidden md:block ml-auto">
+          {/* Hire Me Button (Styled & Centered) */}
+          <div className="hidden md:flex justify-center">
             <a
               href="#hire-me"
-              className="relative px-6 py-3 text-white font-semibold bg-gradient-to-r from-pink-500 to-red-500 rounded-full shadow-lg transition duration-300 transform hover:scale-110 active:scale-95"
-              style={{
-                borderRadius: "50px",
-                boxShadow: "0px 6px 15px rgba(0, 0, 0, 0.3)",
-              }}
+              className="px-6 py-3 text-white font-semibold bg-[#443C68] rounded-full shadow-lg 
+              transition duration-300 transform hover:bg-[#635985] hover:scale-110 active:scale-95"
             >
               Hire Me
             </a>
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            onClick={toggleMobileMenu}
-            className="md:hidden text-white text-3xl ml-auto"
-          >
+          <button onClick={toggleMobileMenu} className="md:hidden text-white text-3xl ml-auto">
             ☰
           </button>
         </nav>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu (Centered & Responsive) */}
         {isMobileMenuOpen && (
-          <div className="md:hidden">
-            <ul className="flex flex-col space-y-4 text-white font-semibold mt-4 dark:text-white">
+          <div className="md:hidden mt-4 flex justify-center">
+            <ul className="flex flex-col items-center space-y-4 text-white font-semibold w-full">
               {["Home", "About", "Projects", "Contacts"].map((item, index) => (
-                <li key={index}>
-                  <a className="block text-center px-6 py-3 rounded-full hover:bg-white hover:text-gray-800 hover:shadow-xl hover:scale-110 hover:opacity-90 transition duration-300">
+                <li key={index} className="w-full text-center">
+                  <a
+                    className="block w-full px-6 py-3 rounded-lg bg-[#393053] hover:bg-[#443C68] 
+                    transition-all duration-300 text-center"
+                  >
                     {item}
                   </a>
                 </li>
               ))}
-              <li>
+              <li className="w-full text-center">
                 <a
                   href="#hire-me"
-                  className="block text-center px-6 py-3 bg-gradient-to-r from-pink-500 to-red-500 rounded-full text-white shadow-lg transition duration-300 transform hover:scale-110 active:scale-95"
-                  style={{
-                    borderRadius: "50px",
-                    boxShadow: "0px 6px 15px rgba(0, 0, 0, 0.3)",
-                  }}
+                  className="block w-full px-6 py-3 bg-[#443C68] hover:bg-[#635985] rounded-lg 
+                  text-white shadow-lg transition duration-300 transform hover:scale-110 active:scale-95"
                 >
                   Hire Me
                 </a>

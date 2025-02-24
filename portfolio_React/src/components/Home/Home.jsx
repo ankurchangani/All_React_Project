@@ -3,14 +3,14 @@ import imgMe from "../../assets/images/me/me.jpg";
 import Ac from '../../assets/images/home/Ac.svg';
 import { FaReact, FaHtml5, FaCss3Alt } from 'react-icons/fa';
 import { SiJavascript } from 'react-icons/si';
-import VideoBg from "../../assets/images/home/3129576-uhd_3840_2160_30fps.mp4";
+import Resume from '../../assets/Resume/Resume.pdf'
 
 const Home = () => {
   const [fadeIn, setFadeIn] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => setFadeIn(true), 500);
-    
+
     return () => clearTimeout(timer);
   }, []);
 
@@ -33,10 +33,6 @@ const Home = () => {
         className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 text-yellow-500 text-5xl sm:text-6xl md:text-7xl animate-bounce"
       />
 
-      {/* HTML Icon - Centered at the Bottom */}
-      <FaHtml5
-        className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-orange-500 text-5xl sm:text-6xl md:text-7xl animate-pulse"
-      />
 
       {/* CSS Icon - Bottom Right */}
       <FaCss3Alt
@@ -56,7 +52,7 @@ const Home = () => {
       {/* Name */}
       <h1 className="font-bold text-4xl mb-4 leading-tight">
         Hi, I'm{" "}
-        <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent text-[60px] sm:text-[80px] md:text-[100px]">
+        <span className="bg-gradient-to-r from-[#635985] via-[#443C68]  to-[#393053] bg-clip-text text-transparent text-[60px] sm:text-[80px] md:text-[100px]">
           Ankur Changani
         </span>
       </h1>
@@ -71,16 +67,32 @@ const Home = () => {
 
       {/* Description */}
       <p className="text-base sm:text-lg text-gray-200 max-w-md sm:max-w-xl md:max-w-2xl mx-4">
-        I am Ankur Changani, a Front End Developer dedicated to crafting dynamic, responsive web applications. With the goal of advancing my career and participating in inspiring projects, I present my work and my passion for Front-End development. Let's shape digital solutions together and shape the future.
+        I am <span className="text-[#635985] font-semibold">Ankur Changani</span>, a{" "}
+        <span className="text-white font-semibold">Front End Developer</span> dedicated to crafting dynamic, responsive web applications.
+        With the goal of advancing my career and participating in inspiring projects, I present my work and my passion for{" "}
+        <span className="text-white font-semibold">Front-End development</span>.
+        Let's shape <span className="text-white font-semibold">digital solutions</span> together and shape the future.
       </p>
 
+
       {/* Contact Button */}
-      <a
-        href="#contact"
-        className="mt-8 inline-block px-6 py-3 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 rounded-full text-white font-semibold shadow-lg hover:opacity-90 transition-all duration-300"
-      >
-        Contact Me
-      </a>
+      <div className="flex gap-3 mb-4">
+        <a
+          href={Resume}
+          download="Ankur_Changani_Resume.pdf"
+          className="mt-8 inline-block px-6 py-3 bg-[#35374B] rounded-full text-white font-semibold shadow-lg hover:opacity-90 transition-all duration-300"
+        >
+          Download CV
+        </a>
+
+        <a
+          href="#contact"
+          className="mt-8 inline-block px-6 py-3 bg-[#443C68] rounded-full text-white font-semibold shadow-lg hover:opacity-90 transition-all duration-300"
+        >
+          Contact Me
+        </a>
+      </div>
+
     </section>
   );
 };
