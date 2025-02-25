@@ -29,8 +29,8 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section className="py-24">
-      <div className="container mx-auto px-4">
+    <section className="py-20">
+      <div className="container mx-auto ">
         <div class="flex justify-center items-center mb-10"><h2 class="titel text-[#635985]">Project<span class="titel-shadow text-[#443C68]">Project</span></h2></div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (

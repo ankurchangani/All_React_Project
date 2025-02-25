@@ -4,17 +4,17 @@ import Logo from "../../assets/images/home/Ac.svg";
 
 const Footer = () => {
   return (
-    <footer className="relative py-12 sm:py-20 bg-[#18122B] text-white">
+    <footer className="relative py-20 sm:py-20  text-white">
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col items-center text-center space-y-6">
           {/* Logo & Name */}
           <div className="flex flex-col items-center">
             <img src={Logo} alt="Ankur Changani" className="w-16 sm:w-20 mb-2" />
-            <h2 className="text-2xl font-bold bg-gradient-to-r from-[#635985] to-[#443C68] text-transparent bg-clip-text">
+            <h2 className="text-2xl font-bold bg-gradient-to-r from-[#443C68] to-[#635985] text-transparent bg-clip-text">
               Ankur Changani
             </h2>
-            <p className="text-2xl font-bold bg-gradient-to-r from-[#635985] to-[#393053] text-transparent bg-clip-text mt-5">
-              Front-end Developer
+            <p className="text-2xl font-bold bg-gradient-to-r from-[#443C68] to-[#393053] text-transparent bg-clip-text mt-5">
+              Front-end Developer 
             </p>
           </div>
 
@@ -62,7 +62,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="text-white text-3xl transition duration-300 transform hover:scale-110"
             >
-              <FaGithub className="transition duration-300 bg-gradient-to-r from-[#635985] to-[#443C68] text-transparent bg-clip-text hover:from-[#393053] hover:to-[#18122B]" />
+              <FaGithub className="transition duration-300  text-white text-transparent bg-clip-text" /> 
             </a>
             <a
               href="https://www.linkedin.com/in/ankur-changani-07908830b/"
@@ -70,7 +70,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="text-white text-3xl transition duration-300 transform hover:scale-110"
             >
-              <FaLinkedin className="transition duration-300 bg-gradient-to-r from-[#635985] to-[#443C68] text-transparent bg-clip-text hover:from-[#393053] hover:to-[#18122B]" />
+              <FaLinkedin className="transition duration-300  text-white text-transparent bg-clip-text" />
             </a>
           </div>
         </div>

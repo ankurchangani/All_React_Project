@@ -3,7 +3,7 @@ import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
 
 const Contacts = () => {
     return (
-        <section className='py-16'>
+        <section className='py-20'>
             <div className="container mx-auto">
                 <div className="flex justify-center items-center">
                     <h2 className="titel text-[#443C68]">
@@ -66,3 +66,4 @@ const Contacts = () => {
 };
 
 export default Contacts;
+

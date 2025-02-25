@@ -52,10 +52,15 @@ const Home = () => {
       {/* Name */}
       <h1 className="font-bold text-4xl mb-4 leading-tight">
         Hi, I'm{" "}
-        <span className="bg-gradient-to-r from-[#635985] via-[#443C68]  to-[#393053] bg-clip-text text-transparent text-[60px] sm:text-[80px] md:text-[100px]">
+        <span
+          className="bg-gradient-to-r from-[#635985] via-[#443C68] to-[#393053] 
+               bg-clip-text text-transparent text-[60px] sm:text-[80px] md:text-[100px] 
+               font-extrabold animate-fade-in-up"
+        >
           Ankur Changani
         </span>
       </h1>
+
 
       {/* Animated Title */}
       <h2
@@ -76,22 +81,23 @@ const Home = () => {
 
 
       {/* Contact Button */}
-      <div className="flex gap-3 mb-4">
+      <div className="flex flex-wrap items-center justify-center gap-4 mt-6">
         <a
           href={Resume}
           download="Ankur_Changani_Resume.pdf"
-          className="mt-8 inline-block px-6 py-3 bg-[#35374B] rounded-full text-white font-semibold shadow-lg hover:opacity-90 transition-all duration-300"
+          className="inline-block px-6 py-3 bg-gradient-to-r from-[#635985] to-[#443C68] rounded-full text-white font-semibold shadow-lg hover:opacity-90 hover:scale-105 transition-all duration-300"
         >
           Download CV
         </a>
 
         <a
           href="#contact"
-          className="mt-8 inline-block px-6 py-3 bg-[#443C68] rounded-full text-white font-semibold shadow-lg hover:opacity-90 transition-all duration-300"
+          className="inline-block px-6 py-3 bg-gradient-to-r from-[#443C68] to-[#18122B] rounded-full text-white font-semibold shadow-lg hover:opacity-90 hover:scale-105 transition-all duration-300"
         >
           Contact Me
         </a>
       </div>
+
 
     </section>
   );
