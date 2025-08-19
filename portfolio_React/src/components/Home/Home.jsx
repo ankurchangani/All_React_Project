@@ -3,6 +3,7 @@ import imgMe from "../../assets/images/me/me.jpg";
 import Ac from '../../assets/images/home/Ac.svg';
 import { FaReact, FaHtml5, FaCss3Alt } from 'react-icons/fa';
 import { SiJavascript } from 'react-icons/si';
+
 import Resume from '../../assets/Resume/Resume.pdf'
 
 const Home = () => {
@@ -15,28 +16,28 @@ const Home = () => {
   }, []);
 
   return (
-    <section className="relative flex flex-col items-center text-center py-12 sm:py-16 md:py-24 text-white min-h-screen overflow-x-hidden">
+    <section className="relative flex flex-col items-center text-center py-12 sm:py-16 md:py-24  pt-28 text-white min-h-screen overflow-x-hidden" id="home">
       {/* AC Logo - Top Left */}
       <img
         src={Ac}
         alt="AC Logo"
-        className="absolute top-4 left-4 sm:top-6 sm:left-6 w-12 h-12 sm:w-16 sm:h-16 animate-pulse"
+        className="absolute top-24 left-4 sm:top-24 sm:left-6 w-12 h-12 sm:w-16 sm:h-16 animate-pulse"
       />
 
       {/* React Icon - Top Right */}
       <FaReact
-        className="absolute top-4 right-4 sm:top-6 sm:right-6 text-blue-500 text-3xl sm:text-4xl md:text-5xl animate-spin"
+        className="absolute top-24 right-4 sm:top-24 sm:right-6 text-blue-500 text-3xl sm:text-4xl md:text-5xl animate-spin"
       />
 
       {/* JavaScript Icon - Bottom Left */}
       <SiJavascript
-        className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 text-yellow-500 text-5xl sm:text-6xl md:text-7xl animate-bounce"
+        className="absolute bottom-7 left-4 sm:bottom-6 sm:left-6 text-yellow-500 text-5xl sm:text-6xl md:text-7xl animate-bounce"
       />
 
 
       {/* CSS Icon - Bottom Right */}
       <FaCss3Alt
-        className="absolute bottom-4 right-4 text-blue-300 text-5xl sm:text-6xl md:text-7xl animate-pulse"
+        className="absolute bottom-7 right-4 text-blue-300 text-5xl sm:text-6xl md:text-7xl animate-pulse"
       />
 
       {/* Profile Image */}

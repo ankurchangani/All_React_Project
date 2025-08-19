@@ -16,9 +16,9 @@ body {
 }
 
 
-
 html {
   transition: background-color 0.3s, color 0.3s;
+  scroll-behavior: smooth
 }
 
 body.light {
@@ -72,3 +72,19 @@ body.dark {
   max-width: 100%;
 }
 
+
+.custom-swiper .swiper-pagination {
+  position: relative;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.custom-swiper .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  border-radius: 50%;
+  background: #fff;
+  margin: 0 5px;
+  cursor: pointer;
+}

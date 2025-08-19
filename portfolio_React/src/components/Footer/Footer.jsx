@@ -28,6 +28,7 @@ const Footer = () => {
               "Tailwind CSS",
               "JavaScript",
               "React.js",
+              "Next.js",
             ].map((service, index) => (
               <span
                 key={index}
