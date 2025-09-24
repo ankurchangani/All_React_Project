@@ -1,25 +1,57 @@
 import React from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { motion } from "framer-motion";
 import Logo from "../../assets/images/home/Ac.svg";
 
 const Footer = () => {
   return (
-    <footer className="relative py-20 sm:py-20  text-white">
+    <footer className="relative py-20 sm:py-20 text-white">
       <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-col items-center text-center space-y-6">
+        <motion.div
+          className="flex flex-col items-center text-center space-y-6"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           {/* Logo & Name */}
-          <div className="flex flex-col items-center">
-            <img src={Logo} alt="Ankur Changani" className="w-16 sm:w-20 mb-2" />
-            <h2 className="text-2xl font-bold bg-gradient-to-r from-[#443C68] to-[#635985] text-transparent bg-clip-text">
+          <motion.div
+            className="flex flex-col items-center"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <motion.img
+              src={Logo}
+              alt="Ankur Changani"
+              className="w-16 sm:w-20 mb-2"
+              whileHover={{ scale: 1.2, rotate: 5 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            />
+            <motion.h2
+              className="text-2xl font-bold bg-gradient-to-r from-[#443C68] to-[#635985] text-transparent bg-clip-text"
+              initial={{ x: -50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.6 }}
+            >
               Ankur Changani
-            </h2>
-            <p className="text-2xl font-bold bg-gradient-to-r from-[#443C68] to-[#393053] text-transparent bg-clip-text mt-5">
-              Front-end Developer 
-            </p>
-          </div>
+            </motion.h2>
+            <motion.p
+              className="text-2xl font-bold bg-gradient-to-r from-[#443C68] to-[#393053] text-transparent bg-clip-text mt-5"
+              initial={{ x: 50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.6 }}
+            >
+              Front-end Developer
+            </motion.p>
+          </motion.div>
 
           {/* Services Section */}
-          <div className="flex flex-wrap justify-center gap-4 text-gray-300 font-medium">
+          <motion.div
+            className="flex flex-wrap justify-center gap-4 text-gray-300 font-medium"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7 }}
+          >
             {[
               "HTML",
               "CSS3",
@@ -30,51 +62,68 @@ const Footer = () => {
               "React.js",
               "Next.js",
             ].map((service, index) => (
-              <span
+              <motion.span
                 key={index}
                 className="px-4 py-2 rounded-lg text-white text-sm sm:text-base bg-gradient-to-r from-[#635985] to-[#443C68] shadow-lg"
+                whileHover={{ scale: 1.1, rotate: 3 }}
+                transition={{ type: "spring", stiffness: 200 }}
               >
                 {service}
-              </span>
+              </motion.span>
             ))}
-          </div>
+          </motion.div>
 
           {/* Navigation Links */}
-          <ul className="flex flex-wrap justify-center space-x-6 sm:space-x-9 font-medium text-gray-300">
+          <motion.ul
+            className="flex flex-wrap justify-center space-x-6 sm:space-x-9 font-medium text-gray-300"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+          >
             {["Home", "About", "Skills", "Projects", "Contact"].map(
               (item, index) => (
-                <li key={index}>
-                  <a
-                    href="#"
-                    className="hover:text-white transition duration-300"
-                  >
+                <motion.li
+                  key={index}
+                  whileHover={{ scale: 1.2, y: -3 }}
+                  transition={{ type: "spring", stiffness: 200 }}
+                >
+                  <a href="#" className="hover:text-white transition duration-300">
                     {item}
                   </a>
-                </li>
+                </motion.li>
               )
             )}
-          </ul>
+          </motion.ul>
 
           {/* Social Icons */}
-          <div className="flex space-x-6 mt-4">
-            <a
+          <motion.div
+            className="flex space-x-6 mt-4"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+          >
+            <motion.a
               href="https://github.com/ankurchangani"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white text-3xl transition duration-300 transform hover:scale-110"
+              className="text-white text-3xl"
+              whileHover={{ scale: 1.2, rotate: 10 }}
+              transition={{ type: "spring", stiffness: 200 }}
             >
-              <FaGithub className="transition duration-300  text-white text-transparent bg-clip-text" /> 
-            </a>
-            <a
+              <FaGithub />
+            </motion.a>
+            <motion.a
               href="https://www.linkedin.com/in/ankur-changani-07908830b/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white text-3xl transition duration-300 transform hover:scale-110"
+              className="text-white text-3xl"
+              whileHover={{ scale: 1.2, rotate: -10 }}
+              transition={{ type: "spring", stiffness: 200 }}
             >
-              <FaLinkedin className="transition duration-300  text-white text-transparent bg-clip-text" />
-            </a>
-          </div>
-        </div>
+              <FaLinkedin />
+            </motion.a>
+          </motion.div>
+        </motion.div>
       </div>
     </footer>
   );

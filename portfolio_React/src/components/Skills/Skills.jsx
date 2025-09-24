@@ -1,9 +1,9 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
+import { motion } from "framer-motion";
 import "swiper/css";
 import "swiper/css/pagination";
 
-// Import skill images
 import Html5 from "../../assets/images/Sklis/html5.png";
 import Css from "../../assets/images/Sklis/css3.png";
 import Bootstrap from "../../assets/images/Sklis/bootstrap.png";
@@ -14,7 +14,6 @@ import Javascript from "../../assets/images/Sklis/javascript.png";
 import ReactImg from "../../assets/images/Sklis/React.js_logo-512.png";
 import NextJs from "../../assets/images/Sklis/next.png";
 import github from "../../assets/images/Sklis/github.png";
-
 
 const SkillsSwiper = () => {
   const skills = [
@@ -31,22 +30,26 @@ const SkillsSwiper = () => {
   ];
 
   return (
-    <section className="py-20 " id="skills">
+    <section className="py-20 bg-[#18122B]" id="skills">
       <div className="container mx-auto">
+        {/* Title Animation */}
         <div className="flex justify-center items-center mb-10">
-          <h2 className="titel text-[#635985]">
+          <motion.h2
+            className="titel text-[#635985]"
+            initial={{ x: -80, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             Skills
             <span className="titel-shadow text-[#443C68]">Skills</span>
-          </h2>
+          </motion.h2>
         </div>
 
+        {/* Swiper Section */}
         <Swiper
           modules={[Autoplay, Pagination]}
           loop={true}
-          autoplay={{
-            delay: 2500,
-            disableOnInteraction: false,
-          }}
+          autoplay={{ delay: 2500, disableOnInteraction: false }}
           pagination={{ clickable: true }}
           breakpoints={{
             320: { slidesPerView: 1, spaceBetween: 20 },
@@ -58,37 +61,55 @@ const SkillsSwiper = () => {
         >
           {skills.map((skill, index) => (
             <SwiperSlide key={index}>
-              <div className="flex flex-col items-center justify-center p-6 bg-[#393053] bg-opacity-90 backdrop-blur-md rounded-2xl shadow-lg border border-[#35374B] transition-all duration-300 hover:scale-105 mb-12">
-                <img
+              <motion.div
+                className="flex flex-col items-center justify-center p-6 bg-[#393053] bg-opacity-90 backdrop-blur-md rounded-2xl shadow-lg border border-[#35374B] mb-12"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                whileHover={{
+                  scale: 1.08,
+                  rotateX: 5,
+                  rotateY: 5,
+                  transition: { type: "spring", stiffness: 200 },
+                }}
+              >
+                <motion.img
                   src={skill.img}
                   alt={skill.name}
                   className="w-20 h-20 md:w-24 md:h-24 object-contain"
+                  whileHover={{ scale: 1.15 }}
+                  transition={{ type: "spring", stiffness: 150 }}
                 />
-                <p className="text-white text-lg md:text-xl font-semibold mt-4">
+                <motion.p
+                  className="text-white text-lg md:text-xl font-semibold mt-4"
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.1 }}
+                >
                   {skill.name}
-                </p>
-              </div>
+                </motion.p>
+              </motion.div>
             </SwiperSlide>
           ))}
         </Swiper>
       </div>
 
-      {/* Custom Styling for Pagination Dots */}
+      {/* Custom Pagination Dots */}
       <style>
         {`
           .swiper-pagination-bullet {
-           width: 10px;
-  height: 10px;
-  display: inline-block;
-  border-radius: 50%;
-  background: #fff;
-  margin: 0 5px;
-  cursor: pointer;
+            width: 10px;
+            height: 10px;
+            display: inline-block;
+            border-radius: 50%;
+            background: #fff;
+            margin: 0 5px;
+            cursor: pointer;
           }
           .swiper-pagination-bullet-active {
             width: 14px;
             height: 14px;
-              margin-top : 20px;
+            margin-top: 20px;
             opacity: 1;
             transform: scale(1.2);
           }
