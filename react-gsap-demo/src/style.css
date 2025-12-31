@@ -1,0 +1,152 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Gilroy-Medium", sans-serif;
+  background-color: #000;
+  color: white;
+}
+nav {
+  padding: 20px;
+  background-color: #222;
+  text-align: center;
+}
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-size: 18px;
+}
+#main {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+#black {
+  width: 100%;
+  height: 100vh;
+  background-color: #161616;
+  position: relative;
+}
+#green {
+  width: 100%;
+  height: 0;
+  background-color: #14cf93;
+  position: absolute;
+  bottom: 0;
+}
+#white {
+  width: 100%;
+  height: 0;
+  background-color: #fcfaf8;
+  position: absolute;
+  bottom: 0;
+}
+p,
+h1 {
+  overflow: hidden;
+  text-align: center;
+  color: white;
+}
+p {
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4vw;
+}
+.top {
+  position: absolute;
+  top: 5vh;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.child {
+  display: inline-block;
+}
+.parent {
+  display: inline-block;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Gilroy-Medium", sans-serif;
+  background-color: #000;
+  color: white;
+}
+nav {
+  padding: 20px;
+  background-color: #222;
+  text-align: center;
+}
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-size: 18px;
+}
+#main {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+#black {
+  width: 100%;
+  height: 100vh;
+  background-color: #161616;
+  position: relative;
+}
+#green {
+  width: 100%;
+  height: 0;
+  background-color: #14cf93;
+  position: absolute;
+  bottom: 0;
+}
+#white {
+  width: 100%;
+  height: 0;
+  background-color: #fcfaf8;
+  position: absolute;
+  bottom: 0;
+}
+p,
+h1 {
+  overflow: hidden;
+  text-align: center;
+  color: white;
+}
+p {
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4vw;
+}
+.top {
+  position: absolute;
+  top: 5vh;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.child {
+  display: inline-block;
+}
+.parent {
+  display: inline-block;
+}
